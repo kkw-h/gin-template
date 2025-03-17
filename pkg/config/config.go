@@ -3,7 +3,6 @@ package config
 import (
 	"fmt"
 
-	"github.com/kkw-h/gin-template/internal/config"
 	"github.com/spf13/viper"
 )
 
@@ -12,7 +11,7 @@ var (
 	Err error
 )
 
-func InitConfig() (*config.AppConfig, error) {
+func InitConfig() (*AppConfig, error) {
 	cfg = viper.New()
 	cfg.SetConfigName("env")
 	cfg.SetConfigType("yaml")
@@ -24,7 +23,7 @@ func InitConfig() (*config.AppConfig, error) {
 	if err := cfg.ReadInConfig(); err != nil {
 		return nil, fmt.Errorf("加载配置文件失败: %w", err)
 	}
-	var appConfig config.AppConfig
+	var appConfig AppConfig
 	if err := cfg.Unmarshal(&appConfig); err != nil {
 		return nil, fmt.Errorf("解析配置文件失败: %w", err)
 	}

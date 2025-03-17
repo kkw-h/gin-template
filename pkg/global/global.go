@@ -1,7 +1,7 @@
 package global
 
 import (
-	"github.com/kkw-h/gin-template/internal/config"
+	"github.com/kkw-h/gin-template/pkg/config"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )

@@ -3,12 +3,11 @@ package config
 import (
 	"fmt"
 
-	"github.com/kkw-h/gin-template/internal/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
-func InitDatabase(cfg *config.AppConfig) *gorm.DB {
+func InitDatabase(cfg *AppConfig) *gorm.DB {
 	mysqlCfg := mysql.Config{
 		DSN: fmt.Sprintf(
 			"%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
