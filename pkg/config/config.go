@@ -14,7 +14,7 @@ var (
 
 func InitConfig() (*config.AppConfig, error) {
 	cfg = viper.New()
-	cfg.SetConfigName("config")
+	cfg.SetConfigName("env")
 	cfg.SetConfigType("yaml")
 	cfg.AddConfigPath("./")
 
